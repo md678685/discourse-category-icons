@@ -1,6 +1,6 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
 import Category from "discourse/models/category";
-import { helperContext } from "discourse-common/lib/helpers";
+//import { helperContext } from "discourse-common/lib/helpers";
 import { iconHTML, iconNode } from "discourse-common/lib/icon-library";
 import { isRTL } from "discourse/lib/text-direction";
 import { h } from "virtual-dom";
@@ -47,7 +47,8 @@ export default {
       }
 
       function categoryIconsRenderer(category, opts) {
-        let siteSettings = helperContext().siteSettings;
+        // let siteSettings = helperContext().siteSettings;
+        let siteSettings = Discourse.SiteSettings;
         let description = get(category, "description_text");
         let restricted = get(category, "read_restricted");
         let url = opts.url
